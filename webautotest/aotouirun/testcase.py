@@ -31,6 +31,7 @@ class AutoRun(unittest.TestCase):
         self.driver.switch_to.window(self.windows[-1])
         WebDriverWait(self.driver, 20).until(EC.presence_of_element_located(BaiduElemnt.RENEW), "等待新闻网页中百度按钮元素超时")
         self.title = self.driver.find_element(*BaiduElemnt.RENEW).text
+        print(self.title)
         self.assertEqual("热点要闻", self.title, "用例失败：百度新闻网页的标题与实际展示结果不符")
 
 
